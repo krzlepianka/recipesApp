@@ -21,8 +21,7 @@ const useStyles = makeStyles({
 const Navigation = () => {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
-            <AppBar position="fixed">
+            <AppBar className={classes.root} position="static">
                 <Toolbar>
                     <Typography className={classes.title}>
                         Aplikacja moje przepisy
@@ -31,7 +30,6 @@ const Navigation = () => {
                     <Button className={classes.buttonStyle}>Wyloguj</Button>
                 </Toolbar>
             </AppBar>
-        </div>
     );
 }
  
