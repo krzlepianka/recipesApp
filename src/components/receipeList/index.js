@@ -1,31 +1,36 @@
 import React from 'react'; 
 import { Grid, makeStyles } from '@material-ui/core/';
 import ReceipeItem from './receipeItem/';
+import LoadingSpinner from '../../shared/LoadingSpinner/';
+import withHandleError from '../../shared/hoc/withHandleError';
+import withLoading from '../../shared/hoc/withLoading';
 
-const ReceipeList = ({recipes, handlerRemove}) => {
-    const recipesList = recipes.map(recipe => {
-        return (
-            <ReceipeItem 
-                key={recipe.id} 
-                recipe={recipe}
-            />
-        )
-    });
+const ReceipeList = ({recipes, handleExpand, handlerRemove}) => {
     const useStyles = makeStyles({
         gridContainer: {
             padding: '50px'
         }
     })
     const classes = useStyles();
-    return (
-        <Grid 
-            container 
-            spacing={4}
-            className={classes.gridContainer}
-            >
-            {recipesList}
+    return <Grid 
+        container 
+        className={classes.gridContainer}
+        spacing={4}
+        >
+            {recipes.map(({id, title, prepareTime, difficulty, cuisineType, image, expand}) => (
+                <ReceipeItem 
+                    key={id}
+                    id={id}
+                    title={title}
+                    prepareTime={prepareTime}
+                    difficulty={difficulty}
+                    cuisineType={cuisineType}
+                    image={image}
+                    expand={expand}
+                    handleExpand={handleExpand}
+                />
+            ))}
         </Grid>
-    );
-}
+};
  
-export default ReceipeList;
+export default withHandleError(withLoading(ReceipeList));

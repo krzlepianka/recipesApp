@@ -18,8 +18,7 @@ const useStyles = makeStyles({
     },
 })
 
-const ReceipeItem = ({recipe}) => {
-    const { id, title, prepareTime, difficulty, cuisineType, image } = recipe;
+const ReceipeItem = ({ id, title, prepareTime, difficulty, cuisineType, image, expand, handleExpand }) => {
     const classes = useStyles();
     return (  
         <Grid item xs={12} sm={6} lg={4}>
@@ -48,11 +47,12 @@ const ReceipeItem = ({recipe}) => {
                     </CardContent>
                     <CardActions>
                         <IconButton
+                            onClick={() => handleExpand(id)}
                             aria-label="show more">
                                 pokaż więcej
                         </IconButton>
                     </CardActions>
-                    <Collapse>
+                    <Collapse in={expand}>
                         <Typography>
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         </Typography>

@@ -4,9 +4,12 @@ import Navigation from './components/navigation';
 import ReceipeList from './components/receipeList';
 import recipes from './components/receipeList/mock'
 
+
 class App extends React.Component {
   state = {
-      recipes
+      recipes,
+      error: null,
+      loading: false
   }
 
 handleRemove = id => {
@@ -17,15 +20,26 @@ handleRemove = id => {
     })
 }
 
+handleExpand = id => {
+  const { recipes } = this.state;
+  const currentRecipe = recipes.find(recipe => recipe.id == id);
+  currentRecipe.expand = !currentRecipe.expand;
+  this.setState({
+    recipes
+  });
+};
+
 
   render() {
-    const {recipes} = this.state;
+    const {recipes, expand} = this.state;
     return (
       <div>
           <Navigation />
           <ReceipeList 
             recipes={recipes}
-            handlerRemove={this.handleRemove}/>
+            handlerRemove={this.handleRemove}
+            handleExpand={this.handleExpand}
+            />
       </div>
     );
   }

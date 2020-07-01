@@ -5,7 +5,8 @@ const recipes = [
         prepareTime: '20min', 
         difficulty: "łatwy", 
         cuisineType:"Polska",
-        image: require("../../assets/dishes1.jpg")
+        image: require("../../assets/dishes1.jpg"), 
+        expand: false
     },
     {
         id: 2, 
@@ -13,7 +14,8 @@ const recipes = [
         prepareTime: '20min', 
         difficulty: "łatwy", 
         cuisineType:"Polska",
-        image: require("../../assets/dishes2.jpg")
+        image: require("../../assets/dishes2.jpg"),
+        expand: false
     },
     {
         id: 3, 
@@ -21,7 +23,8 @@ const recipes = [
         prepareTime: '20min', 
         difficulty: "łatwy", 
         cuisineType:"Polska",
-        image: require("../../assets/dishes3.jpg")
+        image: require("../../assets/dishes3.jpg"),
+        expand: false
     },
     {
         id: 4, 
@@ -29,7 +32,8 @@ const recipes = [
         prepareTime: '20min', 
         difficulty: "łatwy", 
         cuisineType:"Polska",
-        image: require("../../assets/dishes4.jpg")
+        image: require("../../assets/dishes4.jpg"),
+        expand: false
     },
     {
         id: 5, 
@@ -37,7 +41,8 @@ const recipes = [
         prepareTime: '20min', 
         difficulty: "łatwy", 
         cuisineType:"Polska",
-        image: require("../../assets/dishes5.jpg")
+        image: require("../../assets/dishes5.jpg"),
+        expand: false
     }
 ]
 
