@@ -1,7 +1,10 @@
 const Receipe = require('./model');
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
 
-exports.createReceipe = (req, res) => {
+exports.createReceipe = ((req, res) =>  {
     const errors = {};
+    console.log(req.file)
     const receipe = new Receipe(req.body);
     receipe.save( function(err, receipe) {
         if(err) {
@@ -12,8 +15,9 @@ exports.createReceipe = (req, res) => {
             res.send(receipe)
         }
     })
-}
+})
 
+    
 
 exports.getAllReceipe = (req, res) => {
     const errors = {};
@@ -27,3 +31,4 @@ exports.getAllReceipe = (req, res) => {
         }
     })
 }
+

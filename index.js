@@ -20,11 +20,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use("/api", api);
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'first call to api'
-    })
-});
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
