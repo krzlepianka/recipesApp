@@ -23,8 +23,7 @@ const receipeSchema = new Schema({
         //required: [true, 'type what ingredients you need']
     },
     image: {
-        data: Date,
-        contentType: String  
+        type: String 
     },
     expand: {
         type: Boolean,
