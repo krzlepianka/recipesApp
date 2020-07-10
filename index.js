@@ -15,6 +15,7 @@ db.once('open', function() {
     console.log(`you are connected to database ${DB_CONNECTION_STRING}`);
 })
 
+app.use('/uploads', express.static('uploads'));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
